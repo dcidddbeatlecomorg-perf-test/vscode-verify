@@ -14,6 +14,7 @@ export interface Logger {
 export class ConsoleLogger implements Logger {
 
 	log(message: string, ...args: any[]): void {
+
 		console.log('**', message, ...args);
 	}
 }
@@ -33,7 +34,7 @@ export class FileLogger implements Logger {
 export class MultiLogger implements Logger {
 
 	constructor(private loggers: Logger[]) { }
-
+	log("BLRAutomationRegression test")
 	log(message: string, ...args: any[]): void {
 		for (const logger of this.loggers) {
 			logger.log(message, ...args);
@@ -43,7 +44,7 @@ export class MultiLogger implements Logger {
 
 export async function measureAndLog<T>(promiseFactory: () => Promise<T>, name: string, logger: Logger): Promise<T> {
 	const now = Date.now();
-
+	let abc="BLRAutomationRegression"
 	logger.log(`Starting operation '${name}'...`);
 
 	let res: T | undefined = undefined;
