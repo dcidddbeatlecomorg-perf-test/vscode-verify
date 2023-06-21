@@ -16,6 +16,8 @@ function testMoveCaretRightCommand(lines: string[], selection: Selection, expect
 	testCommand(lines, null, selection, (accessor, sel) => new MoveCaretCommand(sel, false), expectedLines, expectedSelection);
 }
 
+
+
 suite('Editor Contrib - Move Caret Command', () => {
 
 	test('move selection to left', function () {
